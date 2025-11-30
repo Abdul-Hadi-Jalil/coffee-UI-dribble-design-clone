@@ -1,3 +1,4 @@
+import 'package:coffee_ui_dribble_clone/widgets/coffee_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -50,7 +51,25 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
 
-          //
+          // coffee lists
+          Expanded(
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                CoffeeTile(
+                  imgPath:
+                      'assets/images/jonas-jacobsson-RFHFV7lVQBY-unsplash.jpg',
+                ),
+                CoffeeTile(
+                  imgPath:
+                      "assets/images/nathan-dumlao-c2Y16tC3yO8-unsplash.jpg",
+                ),
+                CoffeeTile(
+                  imgPath: "assets/images/zarak-khan-69ilqMz0p1s-unsplash.jpg",
+                ),
+              ],
+            ),
+          ),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
