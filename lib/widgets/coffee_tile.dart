@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 
 class CoffeeTile extends StatelessWidget {
   final String imgPath;
-  const CoffeeTile({super.key, required this.imgPath});
+  final String coffeeName;
+  final String coffeePrice;
+  const CoffeeTile({
+    super.key,
+    required this.imgPath,
+    required this.coffeeName,
+    required this.coffeePrice,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +40,29 @@ class CoffeeTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Latte',
+                    coffeeName,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
                   ),
                   Text(
                     'with almond milk',
                     style: TextStyle(color: Colors.grey[700]),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(coffeePrice),
+                  Container(
+                    padding: EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: Colors.orange,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Icon(Icons.add),
                   ),
                 ],
               ),
